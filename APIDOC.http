@@ -1,0 +1,63 @@
+#====== trainer and student new account create ============
+
+# api call for trainer create account
+###
+POST http://127.0.0.1:8000/account/register/trainer/
+Content-Type: application/json
+
+{
+    "username":"admin_06",
+    "password":"password@123",
+    "email":"admin06@gmail.com",
+    "phone":"958736921"
+}
+
+# api call for student create account
+###
+POST http://127.0.0.1:8000/account/register/student/
+Content-Type: application/json
+
+{
+    "username":"user_02",
+    "password":"password@123",
+    "email":"user02@gmail.com",
+    "phone":"954436725"
+}
+
+#============ token trainer ===================================
+
+# api call for token create trainer
+###
+POST http://127.0.0.1:8000/account/token/trainer/
+Content-Type: application/json
+
+{
+    "username":"admin_02",
+    "password":"password@123"
+}
+
+#============== trainer details and updated ========================
+
+# api call for details trainer
+###
+GET http://127.0.0.1:8000/account/profile/detail/
+Accept: application/json
+Authorization: Token 1336eae3db8afd265e6bdf5ae1f2ccf0cbf07a9e
+
+# api call for updated trainer
+###
+PUT http://127.0.0.1:8000/account/profile/update/
+Content-Type: application/json
+Authorization: Token 9c0b56695e8d55b13824fceabb03e0fcdc06daea
+
+{
+  "id": 2,
+  "qualification": null,
+  "profile_picture": null,
+  "experience": null,
+  "specialization": null,
+  "skills": null,
+  "created_at": "2026-11-19T04:56:03.596018Z",
+  "updated_at": "2026-11-19T04:56:03.596048Z",
+  "trainer": 2
+}
