@@ -6,10 +6,10 @@ POST http://127.0.0.1:8000/account/register/trainer/
 Content-Type: application/json
 
 {
-    "username":"admin_06",
+    "username":"admin_01",
     "password":"password@123",
-    "email":"admin06@gmail.com",
-    "phone":"958736921"
+    "email":"admin01@gmail.com",
+    "phone":"958736926"
 }
 
 # api call for student create account
@@ -32,7 +32,7 @@ POST http://127.0.0.1:8000/account/token/trainer/
 Content-Type: application/json
 
 {
-    "username":"admin_02",
+    "username":"admin_01",
     "password":"password@123"
 }
 
@@ -61,3 +61,64 @@ Authorization: Token 9c0b56695e8d55b13824fceabb03e0fcdc06daea
   "updated_at": "2026-11-19T04:56:03.596048Z",
   "trainer": 2
 }
+
+
+
+#=============== trainer the course full crud ==================================
+
+#api call for course list
+###
+GET http://127.0.0.1:8000/course/all/
+Accept: application/json
+Authorization: Token 57232a69624770657d551769ef4b356d44b7b7db
+
+#api call for course create
+###
+POST  http://127.0.0.1:8000/course/add/
+Content-Type: application/json
+Authorization: Token 57232a69624770657d551769ef4b356d44b7b7db
+
+{
+
+  "title": "Python Full Stack Development",
+  "description": "Learn Python programming, Django, Django REST Framework, HTML, CSS, JavaScript and MySQL to build full-stack web applications.",
+  "language": "python",
+  "duration": "6 Months",
+  "fee": "25000"
+
+}
+
+#api call for course retrieve
+###
+GET http://127.0.0.1:8000/course/edit/1/
+Accept: application/json
+Authorization: Token 57232a69624770657d551769ef4b356d44b7b7db
+
+#api call for updated
+###
+PUT http://127.0.0.1:8000/course/edit/1/
+Content-Type: application/json
+Authorization: Token 57232a69624770657d551769ef4b356d44b7b7db
+
+{
+  "id": 1,
+  "title": "Python Full Stack Development",
+  "langauge": "python",
+  "duration": "6 Months",
+  "fee": 35000,
+  "cover_picture": null,
+  "created_at": "2026-11-25T04:59:12.001646Z",
+  "updated_at": "2026-11-25T04:59:12.001672Z",
+  "trainer": 1
+}
+
+#api call for course delete
+###
+GET http://127.0.0.1:8000/course/edit/1/
+Accept: application/json
+Authorization: Token 57232a69624770657d551769ef4b356d44b7b7db
+
+
+
+
+

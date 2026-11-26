@@ -22,4 +22,7 @@ urlpatterns = [
 
     #route accounts
     path("account/",include("accounts.urls")),
+
+    #route course_app
+    path("course/",include("course_app.urls")),
 ]
